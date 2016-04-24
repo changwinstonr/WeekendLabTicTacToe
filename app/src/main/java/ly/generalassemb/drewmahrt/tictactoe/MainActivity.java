@@ -12,7 +12,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     private ImageView[] mBlocks = new ImageView[9];
-//    private TextView mDisplay;
+    private TextView mDisplay; //maybe add Toast just below game_turn_text on player change
     private enum TURN {CIRCLE, CROSS}
     private TURN mTurn;
     private int mStatusCounter = 0;
@@ -26,5 +26,8 @@ public class MainActivity extends AppCompatActivity {
     private void init(){
 
     }
+
+
+
 
 }
