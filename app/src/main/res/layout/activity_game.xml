@@ -199,4 +199,66 @@
 
     </GridLayout>
 
+    <View
+        android:id="@+id/left_vertical"
+        android:layout_width="10dp"
+        android:layout_height="300dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="100dp"
+        android:background="@color/win_color"
+        android:visibility="invisible"/>
+
+    <View
+        android:id="@+id/right_vertical"
+        android:layout_width="10dp"
+        android:layout_height="300dp"
+        android:layout_marginLeft="270dp"
+        android:layout_marginTop="100dp"
+        android:background="@color/win_color"
+        android:visibility="invisible"/>
+
+    <View
+        android:id="@+id/center_horizontal"
+        android:background="@color/win_color"
+        android:layout_width="250dp"
+        android:visibility="invisible"
+        android:layout_gravity="center"
+        android:layout_height="10dp" />
+
+    <View
+        android:id="@+id/bottom_horizontal"
+        android:background="@color/win_color"
+        android:layout_width="250dp"
+        android:visibility="invisible"
+        android:layout_gravity="center"
+        android:layout_marginTop="70dp"
+        android:layout_height="5dp" />
+
+    <View
+        android:id="@+id/top_horizontal"
+        android:background="@color/win_color"
+        android:layout_width="250dp"
+        android:visibility="invisible"
+        android:layout_gravity="center"
+        android:layout_marginBottom="70dp"
+        android:layout_height="5dp" />
+
+    <View
+        android:id="@+id/right_left_diagonal"
+        android:background="@color/win_color"
+        android:rotation="45"
+        android:layout_width="5dp"
+        android:visibility="invisible"
+        android:layout_gravity="center"
+        android:layout_height="350dp" />
+
+    <View
+        android:id="@+id/left_right_diagonal"
+        android:background="@color/win_color"
+        android:rotation="135"
+        android:layout_width="5dp"
+        android:visibility="invisible"
+        android:layout_gravity="center"
+        android:layout_height="350dp" />
+
 </RelativeLayout>
