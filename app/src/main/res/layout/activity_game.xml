@@ -14,10 +14,10 @@
         android:id="@+id/game_message_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="40sp"
-        android:text="Player One&apos;s Turn"
+        android:textSize="30sp"
+        android:text="Your turn Player One."
         android:layout_centerHorizontal="true"
-        android:paddingBottom="100dp"/>
+        android:paddingBottom="50dp"/>
 
     <GridLayout
         android:layout_width="match_parent"
@@ -26,7 +26,61 @@
         android:rowCount="3"
         android:layout_below="@+id/game_message_text">
 
-        <TextView
+        <ImageView
+            android:id="@+id/block_1"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:background="@drawable/border"/>
+
+        <ImageView
+            android:id="@+id/block_2"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:background="@drawable/border"/>
+
+        <ImageView
+            android:id="@+id/block_3"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:background="@drawable/border"/>
+
+        <ImageView
+            android:id="@+id/block_4"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:background="@drawable/border"/>
+
+        <ImageView
+            android:id="@+id/block_5"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:background="@drawable/border"/>
+
+        <ImageView
+            android:id="@+id/block_6"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:background="@drawable/border"/>
+
+        <ImageView
+            android:id="@+id/block_7"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:background="@drawable/border"/>
+
+        <ImageView
+            android:id="@+id/block_8"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:background="@drawable/border"/>
+
+        <ImageView
+            android:id="@+id/block_9"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:background="@drawable/border"/>
+
+        <!--<TextView
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:textAppearance="?android:attr/textAppearanceLarge"
@@ -141,7 +195,7 @@
             android:layout_columnWeight="1"
             android:layout_gravity="fill_horizontal"
             android:gravity="center"
-            android:background="@drawable/border" />
+            android:background="@drawable/border" />-->
 
     </GridLayout>
 
