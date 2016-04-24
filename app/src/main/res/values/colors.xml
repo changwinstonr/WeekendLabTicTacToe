@@ -4,6 +4,6 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="grid_color">#dddddd</color>
-    <color name="win_color">#aaaaaa</color>
+    <color name="win_color">#3B2242</color>
 
 </resources>

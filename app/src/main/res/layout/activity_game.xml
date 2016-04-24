@@ -200,7 +200,7 @@
     </GridLayout>
 
     <View
-        android:id="@+id/left_vertical"
+        android:id="@+id/win_left_vertical"
         android:layout_width="10dp"
         android:layout_height="300dp"
         android:layout_marginLeft="50dp"
@@ -209,7 +209,16 @@
         android:visibility="invisible"/>
 
     <View
-        android:id="@+id/right_vertical"
+        android:id="@+id/win_center_vertical"
+        android:layout_width="10dp"
+        android:layout_height="300dp"
+        android:layout_marginLeft="160dp"
+        android:layout_marginTop="100dp"
+        android:background="@color/win_color"
+        android:visibility="invisible"/>
+
+    <View
+        android:id="@+id/win_right_vertical"
         android:layout_width="10dp"
         android:layout_height="300dp"
         android:layout_marginLeft="270dp"
@@ -217,48 +226,52 @@
         android:background="@color/win_color"
         android:visibility="invisible"/>
 
-    <View
-        android:id="@+id/center_horizontal"
-        android:background="@color/win_color"
-        android:layout_width="250dp"
-        android:visibility="invisible"
-        android:layout_gravity="center"
-        android:layout_height="10dp" />
 
     <View
-        android:id="@+id/bottom_horizontal"
+        android:id="@+id/win_top_horizontal"
+        android:layout_width="300dp"
+        android:layout_height="10dp"
+        android:layout_marginTop="140dp"
+        android:layout_marginLeft="15dp"
         android:background="@color/win_color"
-        android:layout_width="250dp"
-        android:visibility="invisible"
-        android:layout_gravity="center"
-        android:layout_marginTop="70dp"
-        android:layout_height="5dp" />
+        android:visibility="invisible"/>
 
     <View
-        android:id="@+id/top_horizontal"
+        android:id="@+id/win_center_horizontal"
+        android:layout_width="300dp"
+        android:layout_height="10dp"
+        android:layout_marginTop="250dp"
+        android:layout_marginLeft="15dp"
         android:background="@color/win_color"
-        android:layout_width="250dp"
-        android:visibility="invisible"
-        android:layout_gravity="center"
-        android:layout_marginBottom="70dp"
-        android:layout_height="5dp" />
+        android:visibility="invisible"/>
 
     <View
-        android:id="@+id/right_left_diagonal"
+        android:id="@+id/win_bottom_horizontal"
+        android:layout_width="300dp"
+        android:layout_height="10dp"
+        android:layout_marginTop="360dp"
+        android:layout_marginLeft="15dp"
         android:background="@color/win_color"
+        android:visibility="invisible"/>
+
+    <View
+        android:id="@+id/win_right_left_diagonal"
+        android:layout_width="10dp"
+        android:layout_height="450dp"
         android:rotation="45"
-        android:layout_width="5dp"
-        android:visibility="invisible"
-        android:layout_gravity="center"
-        android:layout_height="350dp" />
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="160dp"
+        android:background="@color/win_color"
+        android:visibility="invisible"/>
 
     <View
-        android:id="@+id/left_right_diagonal"
-        android:background="@color/win_color"
+        android:id="@+id/win_left_right_diagonal"
+        android:layout_width="10dp"
+        android:layout_height="450dp"
         android:rotation="135"
-        android:layout_width="5dp"
-        android:visibility="invisible"
-        android:layout_gravity="center"
-        android:layout_height="350dp" />
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="160dp"
+        android:background="@color/win_color"
+        android:visibility="invisible"/>
 
 </RelativeLayout>
