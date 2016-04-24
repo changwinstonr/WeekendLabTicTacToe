@@ -7,6 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#000000"
     tools:context="ly.generalassemb.drewmahrt.tictactoe.MainActivity">
 
 
@@ -14,20 +15,31 @@
         android:id="@+id/player_one_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#f2938e"
         android:hint="Enter Player One's Name"/>
+
+    <ImageView
+        android:id="@+id/vs"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:src="@drawable/vs"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/player_one_name"/>
 
     <EditText
         android:id="@+id/player_two_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#8a8fff"
         android:hint="Enter Player Two's Name"
-        android:layout_below="@id/player_one_name"/>
+        android:layout_below="@id/vs"/>
 
     <Button
         android:id="@+id/start_game_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Start Playing!"
+        android:text="FIGHT!"
+        android:layout_centerHorizontal="true"
         android:layout_below="@id/player_two_name"/>
 
     <TextView
@@ -37,6 +49,7 @@
         android:layout_centerInParent="true"
         android:layout_below="@id/start_game_button"
         android:textSize="25sp"
-        android:text="Previous Winner:" />
+        android:text="Previous Winner:"
+        android:textColor="#FFFFFF" />
 
 </RelativeLayout>
