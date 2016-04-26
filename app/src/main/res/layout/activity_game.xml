@@ -12,13 +12,24 @@
     tools:context="ly.generalassemb.drewmahrt.tictactoe.GameActivity">
 
     <TextView
+        android:id="@+id/yourTurn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text=" Your Turn:"
+        android:layout_centerHorizontal="true"
+        android:textColor="#FFFFFF"
+        android:paddingBottom="10dp"/>
+
+    <TextView
         android:id="@+id/game_turn_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="30sp"
-        android:text=" Your Turn: \n\nPlayer One"
+        android:text=" Player One"
         android:layout_centerHorizontal="true"
         android:textColor="#FFFFFF"
+        android:layout_below="@+id/yourTurn"
         android:paddingBottom="15dp"/>
 
     <ImageView
