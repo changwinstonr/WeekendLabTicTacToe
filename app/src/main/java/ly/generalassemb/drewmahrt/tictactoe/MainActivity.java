@@ -4,28 +4,26 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    public ImageView[] mBlocks = new ImageView[9];
+    private TextView mDisplay;
+    private ImageView mReplay;
+    private enum TURN {CIRCLE, CROSS}
+    private TURN mTurn;
+    private int mStatusCounter = 0;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        init();
-    }
 
-    private ImageView[] mBlocks = new ImageView[9];
-    private TextView mDisplay;
-    private enum TURN {CIRCLE, CROSS}
-    private TURN mTurn;
-    private ImageView mReplay;
-    private int mStatusCounter = 0;
 
-        private void init() {
             mDisplay = (TextView) findViewById(R.id.game_turn_text);
             mReplay = (ImageView) findViewById(R.id.playAgain);
             mReplay.setOnClickListener(new View.OnClickListener() {
@@ -37,22 +35,31 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(starter);
                 }
             });
-        }
+        }//end of onCreate
 
-    //onClick ImageViews
-            for(int position = 0; position < 9;  position++){
+    /*listName.setOnClickListener(new AdapterView.OnClickListener() {
+        @Override
+        public void onClick(AdapterView<?> parent, View view, int position, long id) {
+            Intent todolist = new Intent(MainActivity.this, ToDoActivity.class);
+            startActivity(todolist);
+        }
+    });*/
+
+            //onClick ImageView position
+            for (int position = 0; position < 9;  position++){
                 int resId = getResources().getIdentifier("block_" + (position + 1), "id", getPackageName());
                 mBlocks[position] = (ImageView) findViewById(resId);
                 final int finalPosition = position;
                 mBlocks[position].setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        switchTurn(finalPosition);
+                        changeTurn(finalPosition);
                     }
                 });
-            }
+            }//end of for loop
+
             //change turns
-            private void switchTurn(int position) {
+            private void changeTurn(int position) {
                 if (mTurn == TURN.CIRCLE) {
                     mBlocks[position].setImageResource(R.drawable.caboose_circle);
                     mBlocks[position].setId(GameActivity.CIRCLE);
@@ -69,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
                 mStatusCounter++;
 
                 if (GameActivity.hasWon(position + 1, mBlocks)) {
-                    mDisplay.setText(GameActivity.mWinner + " won");
+                    mDisplay.setText(GameActivity.mWinner + " won!");
                     displayStick(GameActivity.mSet);
                     disableAll();
                 }else if (mStatusCounter==9) {
@@ -109,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 view.setVisibility(View.VISIBLE);
             }
+
 
             private void disableAll() {
                 for (int i = 0; i < 9; i++)

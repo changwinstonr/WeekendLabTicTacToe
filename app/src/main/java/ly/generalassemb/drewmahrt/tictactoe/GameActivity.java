@@ -2,6 +2,8 @@ package ly.generalassemb.drewmahrt.tictactoe;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.EditText;
 import android.widget.ImageView;
 
 public class GameActivity extends AppCompatActivity {
@@ -11,30 +13,33 @@ public class GameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
-        //message tv findView r.id.game message;
-        //message.settext getintnt getextra .getstring
+//        message tv findView r.id.game message;
+//        message.settext getintent getextra .getstring
+//        mDisplay = (EditText) findViewById(R.id.player_one_name);
+//        String position = getIntent().getExtra(game_turn_text).getString();
 
-    }
-    private static ImageView[] mBlocks;
+    }//end of onCreate
+
+    public static ImageView[] mBlocks;
     public static String mWinner;
     public static int mSet;
 
-    public static final int CIRCLE = 0;
-    public static final int CROSS = 1;
+    final int CIRCLE = 0;
+    final int CROSS = 1; //public static?
 
     //checking against winning sets
     private static boolean winningSet(int first, int second, int third, int set) {
         boolean value = mBlocks[first - 1].getId() == mBlocks[second - 1].getId() && mBlocks[second - 1].getId() == mBlocks[third - 1].getId();
         if (value) {
             if (mBlocks[first - 1].getId() == CIRCLE) {
-                mWinner = "CIRCLE";
-            } else {
-                mWinner = "CROSS";
-                mSet = set;
+                    mWinner = "CIRCLE";
+                } else {
+                    mWinner = "CROSS";
+                    mSet = set;
+                }
             }
-        }
-        return value;
-    }
+            return value;
+        }//end of winningSet check
 
     //check the blocks for purple rain
     public static boolean hasWon(int position, ImageView[] blocks) {
@@ -70,5 +75,10 @@ public class GameActivity extends AppCompatActivity {
                 break;
         }
         return hasWon;
-    }
+    }//end of hasWon SwitchCase
+
+    //
+/*    public void checkWin(){
+        Log.d();
+    }*/
 }
