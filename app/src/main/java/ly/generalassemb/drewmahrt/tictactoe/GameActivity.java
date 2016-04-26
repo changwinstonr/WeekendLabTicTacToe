@@ -10,6 +10,10 @@ public class GameActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+
+        //message tv findView r.id.game message;
+        //message.settext getintnt getextra .getstring
+
     }
     private static ImageView[] mBlocks;
     public static String mWinner;
@@ -18,6 +22,7 @@ public class GameActivity extends AppCompatActivity {
     public static final int CIRCLE = 0;
     public static final int CROSS = 1;
 
+    //checking against winning sets
     private static boolean winningSet(int first, int second, int third, int set) {
         boolean value = mBlocks[first - 1].getId() == mBlocks[second - 1].getId() && mBlocks[second - 1].getId() == mBlocks[third - 1].getId();
         if (value) {
@@ -31,7 +36,8 @@ public class GameActivity extends AppCompatActivity {
         return value;
     }
 
-    public static boolean hasWon(int position, ImageView[] blocks) { //check the blocks for purple rain
+    //check the blocks for purple rain
+    public static boolean hasWon(int position, ImageView[] blocks) {
         GameActivity.mBlocks = blocks;
         boolean hasWon = false;
         switch (position) {
