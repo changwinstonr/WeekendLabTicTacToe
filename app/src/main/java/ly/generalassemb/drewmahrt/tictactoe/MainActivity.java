@@ -23,18 +23,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-            mDisplay = (TextView) findViewById(R.id.game_turn_text);
-            mReplay = (ImageView) findViewById(R.id.playAgain);
-            mReplay.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent starter = getIntent();
-                    finish();
-
-                    startActivity(starter);
-                }
-            });
+            initIV();
         }//end of onCreate
 
     /*listName.setOnClickListener(new AdapterView.OnClickListener() {
@@ -44,11 +33,25 @@ public class MainActivity extends AppCompatActivity {
             startActivity(todolist);
         }
     });*/
+        //initialize ImageView positions
+        public void initIV(){
+            mDisplay = (TextView) findViewById(R.id.game_turn_text);
+            mReplay = (ImageView) findViewById(R.id.playAgain);
+            mReplay.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent starter = getIntent();
+                    finish();
 
-            //onClick ImageView position
+                    startActivity(starter);
+
+
+                }
+            });
+
             for (int position = 0; position < 9;  position++){
-                int resId = getResources().getIdentifier("block_" + (position + 1), "id", getPackageName());
-                mBlocks[position] = (ImageView) findViewById(resId);
+                int board = getResources().getIdentifier("block_" + (position + 1), "id", getPackageName());
+                mBlocks[position] = (ImageView) findViewById(board);
                 final int finalPosition = position;
                 mBlocks[position].setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -57,36 +60,40 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
             }//end of for loop
+        }
+
+
 
             //change turns
-            private void changeTurn(int position) {
-                if (mTurn == TURN.CIRCLE) {
-                    mBlocks[position].setImageResource(R.drawable.caboose_circle);
-                    mBlocks[position].setId(GameActivity.CIRCLE);
-                    mTurn = TURN.CROSS;
-                    mDisplay.setText(position);
-                } else {
-                    mBlocks[position].setImageResource(R.drawable.sarge_cross);
-                    mBlocks[position].setId(GameActivity.CROSS);
-                    mTurn = TURN.CIRCLE;
-                    mDisplay.setText(position);
-                }
-
+        private void changeTurn(int position) {
+            if (mTurn == TURN.CIRCLE) {
+                mBlocks[position].setImageResource(R.drawable.caboose_circle);
+                mBlocks[position].setId(GameActivity.CIRCLE);
+                mTurn = TURN.CROSS;
+                mDisplay.setText(position);
+            } else {
+                mBlocks[position].setImageResource(R.drawable.sarge_cross);
+                mBlocks[position].setId(GameActivity.CROSS);
+                mTurn = TURN.CIRCLE;
+                mDisplay.setText(position);
+            }
+                //disable click on ImageViews
                 mBlocks[position].setEnabled(false);
                 mStatusCounter++;
 
-                if (GameActivity.hasWon(position + 1, mBlocks)) {
-                    mDisplay.setText(GameActivity.mWinner + " won!");
-                    displayStick(GameActivity.mSet);
-                    disableAll();
-                }else if (mStatusCounter==9) {
-                    mDisplay.setText("WORT WORT WORT. Try Again.");
-                }
+            if (GameActivity.hasWon(position + 1, mBlocks)) {
+                mDisplay.setText(GameActivity.mWinner + " won!");
+                displayWin(GameActivity.mSet);
+                disableAll();
+            }else if (mStatusCounter==9) {
+                mDisplay.setText("WORT WORT WORT. Try Again.");
             }
-            //displays cross out
-            private void displayStick(int stick) {
+        }
+
+            //displays cross out FTW
+            private void displayWin(int win) {
                 View view;
-                switch (stick) {
+                switch (win) {
                     case 1:
                         view = findViewById(R.id.win_top_horizontal);
                         break;
@@ -114,12 +121,12 @@ public class MainActivity extends AppCompatActivity {
                     default:
                         view = findViewById(R.id.win_top_horizontal);
                 }
-                view.setVisibility(View.VISIBLE);
+                view.setVisibility(View.VISIBLE); //unhides win Views
             }
 
-
+            //disable ImageViews once
             private void disableAll() {
-                for (int i = 0; i < 9; i++)
-                    mBlocks[i].setEnabled(false);
+                for (int position = 0; position < 9; position++)
+                    mBlocks[position].setEnabled(false);
             }
     }
