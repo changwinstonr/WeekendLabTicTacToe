@@ -13,8 +13,10 @@ public class MainActivity extends AppCompatActivity {
     public ImageView[] mBlocks = new ImageView[9];
     private TextView mDisplay;
     private ImageView mReplay;
-    private enum TURN {CIRCLE, CROSS}
-    private TURN mTurn;
+/*    public static int TURNO = 0;
+    public static int TURNX = 1;*/
+    public enum TURN {CIRCLE, CROSS}
+    public TURN mTurn;
     private int mStatusCounter = 0;
 
 
@@ -23,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-            initIV();
+            initImage();
         }//end of onCreate
 
     /*listName.setOnClickListener(new AdapterView.OnClickListener() {
@@ -34,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         }
     });*/
         //initialize ImageView positions
-        public void initIV(){
+        public void initImage(){
             mDisplay = (TextView) findViewById(R.id.game_turn_text);
             mReplay = (ImageView) findViewById(R.id.playAgain);
             mReplay.setOnClickListener(new View.OnClickListener() {

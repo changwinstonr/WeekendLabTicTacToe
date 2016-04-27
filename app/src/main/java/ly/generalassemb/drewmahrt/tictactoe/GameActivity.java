@@ -24,8 +24,9 @@ public class GameActivity extends AppCompatActivity {
     public static String mWinner;
     public static int mSet;
 
-    final int CIRCLE = 0;
-    final int CROSS = 1; //public static?
+
+    public static final int CIRCLE = 0;
+    public static final int CROSS = 1;
 
     //checking against winning sets
     private static boolean winningSet(int first, int second, int third, int set) {
